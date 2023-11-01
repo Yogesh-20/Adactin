@@ -12,7 +12,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src//test//java//com//adactin//feature",
-glue ="com.adactin.stepdefinition")
+                  glue ="com.adactin.stepdefinition",
+                  monochrome = true , 
+                  dryRun = false , 
+                  strict = true ,
+                  tags = ("@Login,@FillUp,@Verfiy,@Book,@Logout"),
+                  plugin = { "html:Reports/Html_Report","pretty","json:Reports/Json_Report.json",
+		                      "com.cucumber.listener.ExtentCucumberFormatter:Reports/Extent_Report.html"
+                		  }
+                 )
 public class RunnerClass {
 	
 	public static WebDriver driver;
