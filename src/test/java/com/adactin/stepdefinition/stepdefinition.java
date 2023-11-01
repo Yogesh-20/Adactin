@@ -187,13 +187,17 @@ public class stepdefinition {
 
 	@When("^user See The Booking Confirmation And The Order NO$")
 	public void user_See_The_Booking_Confirmation_And_The_Order_NO() throws Throwable {
-		
-
+		Thread.sleep(5000);
+		TakesScreenshot abc=(TakesScreenshot)driver;
+	    File SC = abc.getScreenshotAs(OutputType.FILE);
+	    File des =new File("D:\\Eclipse\\Adactin_Cucumber\\screenshot\\adactin.png");
+	    FileUtils.copyFile(SC, des);
+	    System.out.println(driver.getTitle());
 	}
 
 	@Then("^user Click The Logout Button And It Navigate To Logout Page And User See You Have Been Successfully Logged Out$")
 	public void user_Click_The_Logout_Button_And_It_Navigate_To_Logout_Page_And_User_See_You_Have_Been_Successfully_Logged_Out() throws Throwable {
-		
+		Thread.sleep(5000);
 		WebElement logg = driver.findElement(By.xpath("//input[@name='logout']"));
 	    logg.click();
 }
