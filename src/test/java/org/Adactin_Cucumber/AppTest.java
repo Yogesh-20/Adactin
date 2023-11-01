@@ -1,8 +1,9 @@
 package org.Adactin_Cucumber;
 
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
 
 public class AppTest {
     
